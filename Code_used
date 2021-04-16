@@ -1,0 +1,17 @@
+sudo -su root
+
+#install apache webserver 
+yum install httpd -y
+
+#start the service 
+systemctl start httpd
+
+#install wordpress 
+wget https://wordpress.org/latest.tar.gz
+
+# Unzip the package
+tar -xvdf latest.tar.gz
+
+# copy your WordPress application files into the /var/www/html directory
+cp -rf wordpress/* /var/www/html/
+
